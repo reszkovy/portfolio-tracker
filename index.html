@@ -38,6 +38,9 @@
 <h2 class="text-lg font-semibold mb-4">Allocation</h2>h2>
 <canvas id="chart" height="200"></canvas>canvas>
 </div>div>
+  // Password Protection
+  if(!sessionStorage.getItem('auth')){let p=prompt('Enter password:');if(p!=='Dupsko69'){document.body.innerHTML='<h1 style="text-align:center;margin-top:50px;color:red;">Access Denied</h1>h1>';throw new Error('Access denied');}sessionStorage.setItem('auth','true');}
+  
 </div>div>
 <script>
   let positions=JSON.parse(localStorage.getItem('positions')||'[]');
